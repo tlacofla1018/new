@@ -51,6 +51,9 @@
             box-sizing: border-box;
             /* 아웃사이드를 인사이드로 바꿈 패딩에도 적용됨 */
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #tab > li input:checked ~.ab-box{
             z-index: 90;
@@ -60,7 +63,27 @@
             background-color: #767676;
             color: #fff;
         }
-    </style>
+        #tab .notice-content li{}
+        #tab .notice-content li a{
+            color: #000;
+            /* display: flex;
+            align-items: center;
+            gap: 10px; */
+            display: block; /*반드시 블록요소여야함*/
+            width: 80%; /*반드시 위드값이 존재해야함*/
+            overflow: hidden; /*너비를 넘어가면 안보이게*/
+            white-space: nowrap; /*두줄처리 방지*/
+            text-overflow: ellipsis; /*...처리*/
+        }
+        /* #tab .notice-content li a::before{
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+        } */
+    </style>    
 </head>
 <body>
     <ul id="tab">
@@ -69,7 +92,13 @@
             <!-- 네임이 걸려있어야 배반적 선택이 가능함 -->
             <label for="notice">공지사항</label>
             <div class="ab-box">
-                <p>공지사항 들어올거임</p>
+                <ul class="notice-content">
+                    <li><a href="#">공지사항 안내문 입니다. 좀 길게 갈거거든여 쭈우우우우우우우우우우우욱 쓸거에요</a></li>
+                    <li><a href="#">공지사항 안내문 입니다. 좀 길게 갈거거든여 쭈우우우우우우우우우우우욱 쓸거에요</a></li>
+                    <li><a href="#">공지사항 안내문 입니다. 좀 길게 갈거거든여 쭈우우우우우우우우우우우욱 쓸거에요</a></li>
+                    <li><a href="#">공지사항 안내문 입니다. 좀 길게 갈거거든여 쭈우우우우우우우우우우우욱 쓸거에요</a></li>
+                    <li><a href="#">공지사항 안내문 입니다. 좀 길게 갈거거든여 쭈우우우우우우우우우우우욱 쓸거에요</a></li>
+                </ul>
             </div>
         </li>
         <li>
