@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#open-btn{
+    display: block;
+    font-size: 2em;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    line-height: 4;
+    width: 20%;
+    border: 0;
+    margin: 100px auto 0;
+    box-shadow: 15px 15px 20px;
+    cursor: pointer;
+}
+#popup-box{
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    background-color: #333;
+    color: #fff;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    /* 브라우저 왼쪽 상단을 기준으로 하기 때문에 절반씩 빼서 중앙을 맞춰주는 것 */
+    text-align: right;
+    display: none;
+}
+/* 보통은 포지션 엡솔루트 줘서 닫기 버튼을 붙여버림 */
+#popup-box span{
+    display: inline-block;
+    font-size: 3em;
+    cursor: pointer;
+    padding: 20px;
+}
+#popup-box p{
+    margin-top: 100px;
+    text-align: center;
+}
+.pop{
+    display: block !important;
+}
