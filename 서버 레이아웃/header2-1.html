@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,dl{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            height: 300vh;
+            font-size: 16px;
+        }
+        #header{
+            position: sticky;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        #headerContainer{
+            width: 100%;
+            max-width: 1920px;
+            position: relative;
+        }
+        #headerContainer .gnbContainer .mobileSideMenu{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+        }
+        #headerContainer .headerLogo{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            background-color: #333;
+        }
+        #headerContainer .headerLogo a{
+            display: block;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ccc;
+        }
+        #headerContainer .gnbContainer{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003302;
+            position: relative;
+        }
+        #headerContainer .gnbContainer .gnb{
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            background-color: #007404;
+        }
+        #headerContainer .gnbContainer .gnbBg{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #007404;
+            z-index: -1;
+        }
+        #headerContainer .gnbContainer .gnb .gnbDepth01{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 14%;
+            max-width: 1280px;
+            background-color: #209a24;
+        }
+        #headerContainer .gnbContainer .gnb .gnbDepth01 > li{
+            position: relative;
+        }
+        #headerContainer .gnbContainer .gnb .gnbDepth01 > li > a{
+            display: block;
+            line-height: 80px;
+        }
+        #headerContainer .gnbContainer .gnb .gnbDepth02{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #38b53c;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div id="headerContainer">
+            <!--소담씨네 로고-->
+            <div class="headerLogo">
+                <a href="/">
+                    <span>SODAMCINE1</span> <!--웹접근성을 위한 히든 텍스트-->
+                </a>
+            </div>
+            <!--GNB 영역-->
+            <div class="gnbContainer">
+                <!--모바일 카테고리탭 Btn-->
+                <button class="mobileSideMenu">
+                    <span>
+                        <span></span>
+                        <span>Mobile Navigation Open</span> <!--웹접근성을 위한 히든 텍스트-->
+                    </span>
+                </button>
+                <!--소담씨네 로고 Sticky 버전-->
+                <span class="headerLogoSticky">
+                    <a href="/">
+                        <span>SODAMCINE2</span> <!--웹접근성을 위한 히든 텍스트-->
+                    </a>
+                </span>
+                <!--GNB-->
+                <nav class="gnb">
+                    <!-- <h2>Site Header Navigation</h2> 웹접근성을 위한 히든 텍스트 -->
+                    <ul class="gnbDepth01">
+                        <li>
+                            <a href="">대메뉴</a>
+                            <ul class="gnbDepth02">
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">대메뉴</a>
+                            <ul class="gnbDepth02">
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">대메뉴</a>
+                            <ul class="gnbDepth02">
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">대메뉴</a>
+                            <ul class="gnbDepth02">
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!--GNB BG-->
+                <div class="gnbBg"></div>
+                <!--뒤로가기 Btn-->
+                <button onclick="window.history.back()">
+                    <span>
+                        <span>뒤로 가기</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!--KO/EN 언어변경 Btn-->
+        <!-- <div>
+            <h2>Language</h2> 웹접근성을 위한 히든 텍스트
+            <div>
+                <span>
+                    <a href="#">
+                        <span>KO</span>
+                    </a>
+                </span>
+                <span>
+                    <a href="#">
+                        <span>EN</span>
+                    </a>
+                </span>
+            </div>
+        </div> -->
+    </header>
+</body>
+</html>
