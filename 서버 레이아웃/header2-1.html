@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>line2 sticky header</title>
     <style>
         *{
             margin: 0;
@@ -14,10 +14,25 @@
         }
         a{
             text-decoration: none;
+            color: #fff;
         }
         body{
             height: 300vh;
             font-size: 16px;
+            background-color: #333;
+        }
+
+        .scrolledBg{
+            background-color: #000;
+        }
+        .active{
+            display: block !important;
+        }
+
+        .ad{
+            width: 100%;
+            height: 60px;
+            background-color: antiquewhite;
         }
         #header{
             position: sticky;
@@ -35,70 +50,105 @@
             top: 0;
             left: 0;
             width: 24px;
+            display: none;
         }
         #headerContainer .headerLogo{
             width: 100%;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
-            background-color: #333;
+            display: none;
         }
         #headerContainer .headerLogo a{
             display: block;
             color: #fff;
             text-align: center;
-            line-height: 40px;
-            background-color: #ccc;
+            line-height: 0;
+            padding-top: 20px;
+            box-sizing: border-box;
         }
         #headerContainer .gnbContainer{
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #003302;
             position: relative;
+        }
+        #headerContainer .gnbContainer .headerLogoSticky{
+            display: none;
+        }
+        #headerContainer .gnbContainer .backBtn{
+            display: none;
         }
         #headerContainer .gnbContainer .gnb{
             width: 100%;
             max-width: 1280px;
             margin: 0 auto;
-            background-color: #007404;
         }
         #headerContainer .gnbContainer .gnbBg{
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            height: 100px;
-            background-color: #007404;
+            height: 0;
             z-index: -1;
+            overflow: hidden;
+            background-color: aqua;
+            transition: all 0.4s ease-in-out;
         }
         #headerContainer .gnbContainer .gnb .gnbDepth01{
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 14%;
+            width: 100%;
             max-width: 1280px;
-            background-color: #209a24;
+            box-sizing: border-box;
+            text-align: center;
         }
         #headerContainer .gnbContainer .gnb .gnbDepth01 > li{
             position: relative;
+            width: 20%;
         }
         #headerContainer .gnbContainer .gnb .gnbDepth01 > li > a{
             display: block;
-            line-height: 80px;
+            line-height: 60px;
         }
         #headerContainer .gnbContainer .gnb .gnbDepth02{
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            background-color: #38b53c;
+            background-color: bisque;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+        }
+        #headerContainer .gnbContainer .gnb .gnbDepth02 li a{
+            line-height: 40px;
+        }
+        #headerContainer .gnbContainer .gnb:hover + .gnbBg,
+        #headerContainer .gnbContainer .gnb:hover .gnbDepth02{
+            height: 120px;
+            opacity: 1;
+        }
+        #main{
+            position: relative;
+            width: 100%;
+            height: 900px;
+            background-color: #fff;
+            transform: translateY(-120px);
+            z-index: -1;
+        }
+        #main::before{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 900px;
+            background-color: rgb(0, 0, 0, .2);
         }
     </style>
 </head>
 <body>
+    <div class="ad"></div>
     <header id="header">
         <div id="headerContainer">
             <!--소담씨네 로고-->
@@ -206,12 +256,52 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="">대메뉴</a>
+                            <ul class="gnbDepth02">
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">대메뉴</a>
+                            <ul class="gnbDepth02">
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="">소메뉴</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!--GNB BG-->
                 <div class="gnbBg"></div>
                 <!--뒤로가기 Btn-->
-                <button onclick="window.history.back()">
+                <button class="backBtn" onclick="window.history.back()">
                     <span>
                         <span>뒤로 가기</span>
                     </span>
@@ -235,5 +325,28 @@
             </div>
         </div> -->
     </header>
+    <main id="main"></main>
+
+    <script>
+        addEventListener('scroll', function(){
+            const header = document.querySelector('#header');
+            if(window.scrollY > 820){
+                header.classList.add('scrolledBg');
+            }else{
+                header.classList.remove('scrolledBg');
+            }
+            
+            const headerLogo = document.querySelector('.headerLogo');
+            const headerLogoSticky = document.querySelector('.headerLogoSticky');
+            if(window.scrollY > 60){
+                headerLogo.classList.remove('active');
+                headerLogoSticky.classList.add('active');
+                
+            }else{
+                headerLogo.classList.add('active');
+                headerLogoSticky.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
